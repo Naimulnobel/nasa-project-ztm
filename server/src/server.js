@@ -11,11 +11,7 @@ mongoose.connection.on('error', (err) => {
     console.error(err)
 })
 async function startServer() {
-    await mongoose.connect('mongodb://localhost:27017/nasa', {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-
-    })
+    await mongoose.connect('mongodb://localhost:27017/nasa')
     await loadPlanetsData()
     server.listen(PORT, () => {
         console.log(`Listening on port ${PORT}...`)
