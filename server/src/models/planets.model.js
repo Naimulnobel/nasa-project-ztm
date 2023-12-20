@@ -39,7 +39,8 @@ function loadPlanetsData() {
 }
 async function getAllPlanets() {
     return await planets.find({}, {
-        'keplerName': 1,
+        '_id': 0,
+        '__v': 0,
     });
 }
 async function savePlanet(planet) {
